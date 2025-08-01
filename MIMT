@@ -10,3 +10,77 @@ Estudar:
 ## 2. Fluxo Teórico do Ataque  
 ```plaintext
 1. Invasão → 2. Persistência → 3. Varredura de arquivos → 4. Criptografia → 5. Resgate
+
+
+encrypter.py (Simulação)
+Pseudocódigo:
+
+python
+def fake_encrypt(file):  
+    """Apenas renomeia arquivos com extensão .crypted"""  
+    return file + ".crypted"  # Nenhuma criptografia real
+decrypter.py (Simulação)
+Lógica:
+
+python
+def fake_decrypt(file):  
+    """Remove a extensão .crypted"""  
+    return file.replace(".crypted", "")
+- Mitigações Reais (Baseadas em NIST)
+Backups Automatizados:
+
+Ferramentas: BorgBackup, Veeam
+
+Monitoramento:
+
+Regras YARA para detectar padrões de ransomware
+
+Resposta a Incidentes:
+
+Isolamento imediato de sistemas infectados
+
+5. Referências Técnicas
+MITRE ATT&CK: T1486
+
+CWE-506: Embedded Malicious Code
+
+text
+
+---
+
+### 🔍 **Como Validar sem Executar Código**  
+1. **Análise Estática**:  
+   - Use `bandit` (Python) para verificar falhas no código:  
+     ```bash
+     bandit encrypter.py --severity-level high
+     ```  
+2. **Diagramas de Fluxo**:  
+   - Descreva em texto usando [Mermaid](https://mermaid.js.org/):  
+     ```mermaid
+     graph TD  
+         A[Invasão] --> B[Persistência]  
+         B --> C[Criptografia Simulada]  
+         C --> D[Logs de Atividade]  
+     ```
+
+---
+
+### ⚠️ **Checklist de Entrega Segura**  
+- [ ] Todos os arquivos têm cabeçalho com `# DISCLAIMER: USO EDUCACIONAL`  
+- [ ] Nenhuma chave de criptografia real incluída  
+- [ ] Links para fontes confiáveis (NIST, MITRE)  
+
+---
+
+### 💡 **Dica de Ouro**  
+Se quiser **aumentar a credibilidade**:  
+1. Adicione um **"Caso Real"** no README:  
+   ```markdown
+   ## Estudo de Caso: WannaCry  
+   - **Vetor**: Exploração do EternalBlue (MS17-010)  
+   - **Falha**: SMBv1 não atualizado  
+Inclua um checklist corporativo em /docs:
+
+text
+[ ] Segmentação de rede  
+[ ] Backup offline testado mensalmente  
