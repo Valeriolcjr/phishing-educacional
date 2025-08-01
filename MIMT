@@ -1,0 +1,12 @@
+# Análise de Ransomware para Defesa Cibernética  
+*(Documentação Técnica - Projeto DIO)*  
+
+## 1. Objetivo Pedagógico  
+Estudar:  
+- Técnicas de criptografia maliciosa (AES, RSA)  
+- Padrões de comportamento de ransomware  
+- Estratégias de mitigação corporativa  
+
+## 2. Fluxo Teórico do Ataque  
+```plaintext
+1. Invasão → 2. Persistência → 3. Varredura de arquivos → 4. Criptografia → 5. Resgate
